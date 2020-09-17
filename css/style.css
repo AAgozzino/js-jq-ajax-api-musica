@@ -27,6 +27,25 @@ header img {
     margin-top: 10px;
 }
 
+.menu{
+  display: flex;
+  align-items: center;
+}
+
+.genre-selection{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.genre-selection label{
+  color: #fff;
+}
+
+.genre-selection select{
+  font-size: 16px;
+}
+
 .cds-container {
     display: flex;
     justify-content: center;
