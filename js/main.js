@@ -5,7 +5,6 @@ $(document).ready(function() {
       "method": "GET",
       "success": function (data, stato) {
         var response = data.response;
-        
         render(response);
       },
       "error": function (richiesta, stato, errori) {
@@ -13,6 +12,33 @@ $(document).ready(function() {
       }
     }
   );
+
+  $("#genre").change(
+    function(){
+      var genre = $("#genre").val();
+      console.log(genre);
+      $(".cd").each(
+        function(){
+          var diskGenre = $(this).attr("data-genre");
+          console.log(diskGenre);
+          if (genre == "All") {
+            $(this).show();
+            console.log(this);
+          } else if (diskGenre == genre) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        }
+      )
+
+      // var genre = $("#genre").val()
+      // console.log(genre);
+    }
+  );
+
+
+
 });
 
 function render(info) {
